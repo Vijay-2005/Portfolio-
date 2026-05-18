@@ -31,10 +31,12 @@
     <!-- Loading Spinner -->
 
     <div class="container mx-auto grid grid-cols-2 gap-4 p-4 px-10 xl:px-32 pb-20 content h-full">
-        @for (blogPosts of blogPost.data.publication.posts.edges; track $index) {
-        <!-- <pre>{{blogPosts | json}}</pre> -->
-        <div
-            class="bg-white row-span-2 md:row-span-1 col-span-2 dark:bg-gray-800 rounded-[30px] p-3 md:p-6 flex flex-col gap-4 h-[350px]  md:h-[270px] hover:shadow-lg dark:hover:shadow-xl hover-trigger relative">
+        @if (blogPost.data?.publication?.posts?.edges) {
+            @for (blogPosts of blogPost.data.publication.posts.edges; track $index) {
+            <!-- <pre>{{blogPosts | json}}</pre> -->
+            <div
+                class="bg-white row-span-2 md:row-span-1 col-span-2 dark:bg-gray-800 rounded-[30px] p-3 md:p-6 flex flex-col gap-4 h-[350px]  md:h-[270px] hover:shadow-lg dark:hover:shadow-xl hover-trigger relative">
+
 
 
             <div class="grid grid-cols-4 sm:mb-4">
@@ -85,6 +87,11 @@
                 </div>
             </div>
         </div>
+        }
+        } @else {
+            <div class="col-span-2 text-center text-gray-500 dark:text-gray-400 py-10">
+                <p>No blogs found or there was an issue loading the publication.</p>
+            </div>
         }
 
         <!-- Powered by Hashnode -->
