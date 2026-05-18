@@ -27,12 +27,11 @@
         </div>
     </div>
 </div>
-<main *ngIf="blogPost$ |  async as blogPost">
-    <!-- Loading Spinner -->
 
+<main *ngIf="!loading">
     <div class="container mx-auto grid grid-cols-2 gap-4 p-4 px-10 xl:px-32 pb-20 content h-full">
-        @if (blogPost.data?.publication?.posts?.edges) {
-            @for (blogPosts of blogPost.data.publication.posts.edges; track $index) {
+        @if (blogPostData?.publication?.posts?.edges?.length > 0) {
+            @for (blogPosts of blogPostData.publication.posts.edges; track $index) {
             <!-- <pre>{{blogPosts | json}}</pre> -->
             <div
                 class="bg-white row-span-2 md:row-span-1 col-span-2 dark:bg-gray-800 rounded-[30px] p-3 md:p-6 flex flex-col gap-4 h-[350px]  md:h-[270px] hover:shadow-lg dark:hover:shadow-xl hover-trigger relative">

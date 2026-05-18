@@ -12,19 +12,29 @@ import { CommonModule } from '@angular/common';
 })
 export class BlogsComponent {
   loading: boolean = true; // Added loading state
+  blogPostData: any = null; // Store actual data
+  errorFetching: boolean = false; // Store error state
 
   constructor(private hashnodeService: HashnodeService) { }
 
   blogPost$: Observable<any> | undefined;
+  
   ngOnInit(): void {
     this.blogPost$ = this.hashnodeService.getBlogPosts();
 
     this.blogPost$.subscribe({
-
-      next: () => {
+      next: (response) => {
+        // Checking to see if it returned GraphQL data correctly
+        if (response && response.data) {
+          this.blogPostData = response.data;
+        } else {
+          this.errorFetching = true;
+        }
         timer(1000).subscribe(() => (this.loading = false));
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error fetching blogs:', err);
+        this.errorFetching = true;
         timer(1000).subscribe(() => (this.loading = false));
       },
     });
