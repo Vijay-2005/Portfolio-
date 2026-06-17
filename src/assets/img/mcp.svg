@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <rect x="5" y="5" width="90" height="90" rx="15" fill="#1a1a2e"/>
-  <rect x="20" y="30" width="25" height="40" rx="5" stroke="#00d4ff" stroke-width="3" fill="none"/>
-  <rect x="55" y="30" width="25" height="40" rx="5" stroke="#00d4ff" stroke-width="3" fill="none"/>
-  <line x1="45" y1="45" x2="55" y2="45" stroke="#00d4ff" stroke-width="3"/>
-  <line x1="45" y1="55" x2="55" y2="55" stroke="#00d4ff" stroke-width="3"/>
-  <circle cx="32" cy="45" r="4" fill="#00d4ff"/>
-  <circle cx="32" cy="55" r="4" fill="#00d4ff"/>
-  <circle cx="68" cy="45" r="4" fill="#00d4ff"/>
-  <circle cx="68" cy="55" r="4" fill="#00d4ff"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><rect width="90" height="90" x="5" y="5" fill="#1a1a2e" rx="15"/><rect width="25" height="40" x="20" y="30" fill="none" stroke="#00d4ff" stroke-width="3" rx="5"/><rect width="25" height="40" x="55" y="30" fill="none" stroke="#00d4ff" stroke-width="3" rx="5"/><line x1="45" x2="55" y1="45" y2="45" stroke="#00d4ff" stroke-width="3"/><line x1="45" x2="55" y1="55" y2="55" stroke="#00d4ff" stroke-width="3"/><circle cx="32" cy="45" r="4" fill="#00d4ff"/><circle cx="32" cy="55" r="4" fill="#00d4ff"/><circle cx="68" cy="45" r="4" fill="#00d4ff"/><circle cx="68" cy="55" r="4" fill="#00d4ff"/></svg>
